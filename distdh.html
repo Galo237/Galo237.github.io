@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acessibilidade</title>
+
+<style>
+
+body {
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.neymar {
+  text-align: justify;
+  line-height: 1.8;
+  margin: 20px;
+  text-shadow: 2px 2px 4px rgba(116, 129, 28, 0.8);
+  font-size: 30px; /* Ajuste o tamanho da fonte conforme necessário */
+  color: #000000;
+}
+
+.neymar-container {
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #fff; /* Fundo branco para a caixa */
+  padding: 20px; /* Espaçamento interno para o conteúdo */
+  border-radius: 10px; /* Borda arredondada para uma aparência suave */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar a caixa */
+}
+
+/* Estilos do cabeçalho */
+header {
+  background-color: #333; /* Alterei a cor de fundo do cabeçalho */
+  color: #ffffff;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  background-image: url("imagens/logoa.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.button a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-indent: -9999px;
+  }
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-buttons a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 20px;
+  font-weight: 600;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.nav-buttons a:hover {
+  color: #c6f53a;
+}
+
+/* Estilos do banner */
+#banner {
+  background-image: url("imagens/bannpreto.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#banner h1 {
+  font-size: 86px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px; /* Aumentei a margem inferior */
+}
+
+#banner h4 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 5px;
+  margin-bottom: 20px; /* Aumentei a margem inferior */
+}
+
+#banner .containers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+
+/* Estilos dos botões */
+.btnz {
+  background-color: #c6f53a; /* Mudei a cor de fundo padrão */
+  color: #333;
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 20px;
+  transition: background-color 0.3s;
+}
+
+.btn {
+    background-color: #c6f53a;
+    color: #333;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 20px;
+    transition: background-color 0.3s;
+    margin-right: 20px;
+  }
+
+.btn:hover,
+.btnz:hover {
+  background-color: #fffbfb;
+  color: #000000;
+}
+
+/* Estilo do rodapé */
+footer {
+  background-color: #333; /* Alterei a cor de fundo do rodapé */
+  color: #ffffff;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  bottom: 0;
+}
+
+/* Ajuste de margens e estilos de texto */
+h3,
+b {
+  margin-left: 30px;
+}
+
+#lupa-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+#lupa {
+  font-size: 24px;
+  padding: 8px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+#lupa:hover {
+  transform: scale(1.2);
+}
+
+#lupa-overlay {
+  display: none;
+  position: fixed;
+  width: 200px;
+  height: 200px;
+  border: 2px solid #333;
+  pointer-events: none;
+  z-index: 9998;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+#lupa-overlay img {
+  width: 100%;
+  height: 100%;
+  transform: scale(2); /* Ajuste o valor de escala conforme necessário */
+  transform-origin: top left;
+}
+
+</style>
+
+
+</head>
+
+<body>
+    <header>
+        <div class="header-left">
+          <h5 class="button">
+            <a href="menu.html"></a>
+          </h5>
+        </div>
+        <div class="header-right">
+          <nav>
+            <a href="visual.html" class="btn">Visual</a>
+            <a href="distdh.html" class="btn">TDAH/Dislexia</a>
+            <a href="intelectual.html" class="btn">Intelectual</a>
+            <a href="fisica.html" class="btn">Física</a>
+          </nav>
+        </div>
+      </header>
+
+      <div id="lupa-container">
+        <div id="lupa" class="lupa-icon" onclick="toggleLupa()">🔍</div>
+        <div id="lupa-overlay"></div>
+      </div>
+
+      <div class="neymar-container">
+        <div class="neymar">
+            <p id="descricaoTexto">    O Transtorno do Déficit de Atenção e Hiperatividade (TDAH) e a Dislexia são condições neurológicas que impactam significativamente a vida de indivíduos, apresentando desafios únicos que vão além das dificuldades comumente enfrentadas.
+
+                TDAH: A Dança da Atenção e Hiperatividade
+                O TDAH é caracterizado por déficits na atenção, hiperatividade e impulsividade. Indivíduos com TDAH podem encontrar dificuldades em concentrar-se, organização e autorregulação emocional. No entanto, é essencial reconhecer que muitas pessoas com TDAH também exibem criatividade e energia positiva quando canalizadas adequadamente.
+                
+                Dislexia: Decifrando o Código das Palavras
+                A Dislexia é uma condição que afeta a leitura, escrita e soletração. A dificuldade em processar símbolos fonéticos pode tornar o aprendizado dessas habilidades um desafio, mas muitos indivíduos disléxicos desenvolvem habilidades excepcionais em raciocínio visual, criatividade e pensamento tridimensional.
+                
+                Superando Estigmas e Fomentando a Compreensão
+                Ambas as condições frequentemente enfrentam estigmas e mal-entendidos. A conscientização e a educação desempenham um papel crucial na promoção da compreensão. É importante destacar que, com o apoio certo, muitos indivíduos com TDAH e Dislexia podem não apenas superar desafios, mas também prosperar e contribuir de maneiras únicas para a sociedade.
+                
+                Abordagens Terapêuticas e Educacionais
+                A intervenção precoce e estratégias personalizadas são fundamentais no apoio a indivíduos com TDAH e Dislexia. Abordagens terapêuticas, como terapia cognitivo-comportamental e treinamento específico para dislexia, têm mostrado eficácia. Além disso, ambientes educacionais inclusivos, adaptações curriculares e o uso de tecnologias assistivas desempenham um papel crucial no sucesso acadêmico.
+                
+                Caminhando Juntos em Direção à Inclusão
+                A sociedade, ao reconhecer e valorizar as habilidades únicas de cada indivíduo, pode criar ambientes mais inclusivos e solidários. Ao invés de ver TDAH e Dislexia como limitações, podemos perceber essas condições como parte da diversidade humana, enriquecendo nossas comunidades com perspectivas variadas.
+                
+                Conclusão: Celebrando as Diferenças
+                TDAH e Dislexia são partes intrínsecas da complexidade humana. Ao compreender, apoiar e celebrar as diferenças, estamos construindo um mundo onde todos têm a oportunidade de brilhar, independentemente das peculiaridades neurológicas que possam enfrentar.</p>
+            <button onclick="lerTexto()">Ler Texto</button>
+            
+      </div>
+      </div>
+
+
+  <footer>
+    <div class="container">
+      <a>&copy; 2023 Site de Acessibilidade. Todos os direitos reservados.</a>
+    </div>
+  </footer>
+
+  <script>
+    let isLupaActive = false;
+
+    function toggleLupa() {
+    isLupaActive = !isLupaActive;
+    const lupaOverlay = document.getElementById('lupa-overlay');
+    lupaOverlay.style.display = isLupaActive ? 'block' : 'none';
+    }
+
+    document.addEventListener('mousemove', function (event) {
+    if (isLupaActive) {
+        const lupaOverlay = document.getElementById('lupa-overlay');
+        const x = event.clientX;
+        const y = event.clientY;
+
+        lupaOverlay.style.left = x + 'px';
+        lupaOverlay.style.top = y + 'px';
+
+        lupaOverlay.style.transform = 'translate(-50%, -50%)';
+        }
+    });
+
+    function lerTexto() {
+    var texto = document.getElementById("descricaoTexto").innerText;
+
+    // Verificar se o navegador suporta a API de fala
+    if ('speechSynthesis' in window) {
+        var sinteseDeFala = new SpeechSynthesisUtterance(texto);
+        speechSynthesis.speak(sinteseDeFala);
+    } else {
+        alert("Seu navegador não suporta a API de fala.");
+    }
+}
+
+    </script>
+
+</body>

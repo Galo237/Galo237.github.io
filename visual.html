@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acessibilidade</title>
+
+<style>
+
+body {
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.neymar {
+  text-align: justify;
+  line-height: 1.8;
+  margin: 20px;
+  text-shadow: 2px 2px 4px rgba(116, 129, 28, 0.8);
+  font-size: 30px; /* Ajuste o tamanho da fonte conforme necessário */
+  color: #000000;
+}
+
+.neymar-container {
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #fff; /* Fundo branco para a caixa */
+  padding: 20px; /* Espaçamento interno para o conteúdo */
+  border-radius: 10px; /* Borda arredondada para uma aparência suave */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar a caixa */
+}
+
+
+/* Estilos do cabeçalho */
+header {
+  background-color: #333; /* Altera a cor de fundo do cabeçalho */
+  color: #ffffff;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  background-image: url("imagens/logoa.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.button a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-indent: -9999px;
+  }
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-buttons a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 20px;
+  font-weight: 600;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.nav-buttons a:hover {
+  color: #c6f53a;
+}
+
+/* Estilos do banner */
+#banner {
+  background-image: url("imagens/bannpreto.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#banner h1 {
+  font-size: 86px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px; /* Aumentei a margem inferior */
+}
+
+#banner h4 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 5px;
+  margin-bottom: 20px; /* Aumentei a margem inferior */
+}
+
+#banner .containers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+
+/* Estilos dos botões */
+.btnz {
+  background-color: #c6f53a; /* Mudei a cor de fundo padrão */
+  color: #333;
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 20px;
+  transition: background-color 0.3s;
+}
+
+.btn {
+    background-color: #c6f53a;
+    color: #333;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 20px;
+    transition: background-color 0.3s;
+    margin-right: 20px;
+  }
+
+.btn:hover,
+.btnz:hover {
+  background-color: #fffbfb;
+  color: #000000;
+}
+
+/* Estilo do rodapé */
+footer {
+  background-color: #333; /* Alterei a cor de fundo do rodapé */
+  color: #ffffff;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  bottom: 0;
+}
+
+/* Ajuste de margens e estilos de texto */
+h3,
+b {
+  margin-left: 30px;
+}
+
+#lupa-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+#lupa {
+  font-size: 24px;
+  padding: 8px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+#lupa:hover {
+  transform: scale(1.2);
+}
+
+#lupa-overlay {
+  display: none;
+  position: fixed;
+  width: 200px;
+  height: 200px;
+  border: 2px solid #333;
+  pointer-events: none;
+  z-index: 9998;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+#lupa-overlay img {
+  width: 100%;
+  height: 100%;
+  transform: scale(2); /* Ajuste o valor de escala conforme necessário */
+  transform-origin: top left;
+}
+
+</style>
+
+
+</head>
+
+<body>
+    <header>
+        <div class="header-left">
+          <h5 class="button">
+            <a href="menu.html"></a>
+          </h5>
+        </div>
+        <div class="header-right">
+          <nav>
+            <a href="visual.html" class="btn">Visual</a>
+            <a href="distdh.html" class="btn">TDAH/Dislexia</a>
+            <a href="intelectual.html" class="btn">Intelectual</a>
+            <a href="fisica.html" class="btn">Física</a>
+          </nav>
+        </div>
+      </header>
+
+      <div id="lupa-container">
+        <div id="lupa" class="lupa-icon" onclick="toggleLupa()">🔍</div>
+        <div id="lupa-overlay"></div>
+      </div>
+
+      <div class="neymar-container">
+      <div class="neymar">
+        <p id="descricaoTexto">A deficiência visual é um desafio que influencia significativamente a forma como as pessoas percebem e interagem com o mundo ao seu redor. Essa condição abrange uma variedade de limitações visuais, desde a baixa visão até a cegueira total. Entretanto, é importante compreender que a deficiência visual não define as capacidades ou a riqueza das experiências de uma pessoa.
+
+            Um Mundo de Sensações Alternativas
+            Para aqueles que vivenciam a deficiência visual, a percepção do ambiente é moldada por outras formas de sensação. Os sentidos restantes, como o tato, audição e olfato, desempenham papéis cruciais na construção de uma imagem mental do mundo. A bengala branca e os cães-guia tornam-se fiéis companheiros, abrindo caminho e proporcionando independência.
+            
+            Adaptação e Tecnologia como Aliadas
+            A adaptação é uma habilidade essencial para superar os desafios da deficiência visual. O sistema de leitura em braille, por exemplo, permite que pessoas cegas explorem o universo literário de forma tátil. Além disso, avanços tecnológicos, como softwares de leitura de tela e aplicativos de reconhecimento de voz, desempenham um papel crucial na integração dessas pessoas na sociedade digital.
+            
+            A Importância do Design Acessível
+            A acessibilidade é um aspecto fundamental para promover a inclusão de pessoas com deficiência visual. O design de ambientes físicos e virtuais deve considerar diretrizes que facilitem a orientação espacial e a compreensão de informações, como o uso de contrastes de cores, tamanhos de fonte adequados e descrições detalhadas de elementos visuais em páginas da web.
+            
+            Desafios Sociais e Empoderamento
+            Além dos desafios físicos, a deficiência visual muitas vezes enfrenta barreiras sociais. A falta de compreensão e estigmatização podem criar obstáculos adicionais. No entanto, a educação e a sensibilização são ferramentas poderosas para transformar essas barreiras em oportunidades de aprendizado e colaboração.
+            
+            A Beleza da Diversidade Visual
+            Cada pessoa com deficiência visual traz consigo uma perspectiva única e valiosa. Suas histórias de superação, conquistas e contribuições destacam a riqueza da diversidade humana. Ao celebrarmos as capacidades individuais e promovermos a acessibilidade, construímos um mundo mais inclusivo e compassivo para todos.
+            
+            Em última análise, a deficiência visual não é uma limitação definitiva, mas sim uma oportunidade para explorar o potencial humano em todas as suas formas. A sociedade, ao abraçar a diversidade visual, enriquece-se com a riqueza das experiências compartilhadas por todos os seus membros.</p>
+        <button onclick="lerTexto()">Ler Texto</button>
+        
+    </div>
+    </div>
+  <footer>
+    <div class="container">
+      <a>&copy; 2023 Site de Acessibilidade. Todos os direitos reservados.</a>
+    </div>
+  </footer>
+
+
+  <script>
+    let isLupaActive = false;
+
+    function toggleLupa() {
+    isLupaActive = !isLupaActive;
+    const lupaOverlay = document.getElementById('lupa-overlay');
+    lupaOverlay.style.display = isLupaActive ? 'block' : 'none';
+    }
+
+    document.addEventListener('mousemove', function (event) {
+    if (isLupaActive) {
+        const lupaOverlay = document.getElementById('lupa-overlay');
+        const x = event.clientX;
+        const y = event.clientY;
+
+        lupaOverlay.style.left = x + 'px';
+        lupaOverlay.style.top = y + 'px';
+
+        lupaOverlay.style.transform = 'translate(-50%, -50%)';
+        }
+    });
+
+    function lerTexto() {
+    var texto = document.getElementById("descricaoTexto").innerText;
+
+    // Verificar se o navegador suporta a API de fala
+    if ('speechSynthesis' in window) {
+        var sinteseDeFala = new SpeechSynthesisUtterance(texto);
+        speechSynthesis.speak(sinteseDeFala);
+    } else {
+        alert("Seu navegador não suporta a API de fala.");
+    }
+}
+
+    </script>
+  
+</body>
